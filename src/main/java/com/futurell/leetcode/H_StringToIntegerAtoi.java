@@ -112,9 +112,13 @@ class Automaton {
     public long ans = 0;
     private String state = "start";
     private Map<String, String[]> table = new HashMap<String, String[]>() {{
+        // ' '
         put("start", new String[]{"start", "signed", "in_number", "end"});
+        // '+'/'-'
         put("signed", new String[]{"end", "end", "in_number", "end"});
+        // number
         put("in_number", new String[]{"end", "end", "in_number", "end"});
+        // order
         put("end", new String[]{"end", "end", "end", "end"});
     }};
 
