@@ -66,12 +66,33 @@ import java.util.Map;
  *   第 3 步："-91283472332"（读入 "91283472332"）
  *     解析得到整数 -91283472332 。
  *     由于 -91283472332 小于范围 [-2^31, 2^31 - 1] 的下界，最终结果被截断为 -231 = -2147483648 。
+ *
  */
 public class H_StringToIntegerAtoi {
 
     public static void main(String[] args) {
         int index = myAtoi("00000-42a1234");
         int i = 0;
+    }
+
+    public static int myAtoi2(String str) {
+        if (str.isEmpty()) {
+            return 0;
+        }
+        int sign = 1, base = 0, i = 0, n = str.length();
+        while (i < n && str.charAt(i) == ' ') {
+            ++i;
+        }
+        if (i < n && (str.charAt(i) == '+' || str.charAt(i) == '-')) {
+            sign = (str.charAt(i++) == '+') ? 1 : -1;
+        }
+        while (i < n && str.charAt(i) >= '0' && str.charAt(i) <= '9') {
+            if (base > Integer.MAX_VALUE / 10 || (base == Integer.MAX_VALUE / 10 && str.charAt(i) - '0' > 7)) {
+                return (sign == 1) ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+            }
+            base = 10 * base + (str.charAt(i++) - '0');
+        }
+        return base * sign;
     }
 
     /**
