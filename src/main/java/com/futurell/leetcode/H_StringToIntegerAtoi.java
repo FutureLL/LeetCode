@@ -67,11 +67,12 @@ import java.util.Map;
  *     解析得到整数 -91283472332 。
  *     由于 -91283472332 小于范围 [-2^31, 2^31 - 1] 的下界，最终结果被截断为 -231 = -2147483648 。
  *
+ * 00000-42a1234 ===> 0
  */
 public class H_StringToIntegerAtoi {
 
     public static void main(String[] args) {
-        int index = myAtoi("00000-42a1234");
+        int index = myAtoi("words and 987");
         int i = 0;
     }
 
@@ -96,7 +97,8 @@ public class H_StringToIntegerAtoi {
     }
 
     /**
-     * 思路: 状态机
+     *  思路: 状态机
+     * 1. 循环字符串,根据循环得到的字符类型,判断其处于什么状态,只有当前字符为数字时才计算
      */
     public static int myAtoi(String str) {
         Automaton automaton = new Automaton();
@@ -112,13 +114,10 @@ class Automaton {
     public long ans = 0;
     private String state = "start";
     private Map<String, String[]> table = new HashMap<String, String[]>() {{
-        // ' '
+        //                          ' '  |  '+'/'-'  |  number  |  order
         put("start", new String[]{"start", "signed", "in_number", "end"});
-        // '+'/'-'
         put("signed", new String[]{"end", "end", "in_number", "end"});
-        // number
         put("in_number", new String[]{"end", "end", "in_number", "end"});
-        // order
         put("end", new String[]{"end", "end", "end", "end"});
     }};
 
