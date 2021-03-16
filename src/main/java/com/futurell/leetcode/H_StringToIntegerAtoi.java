@@ -72,7 +72,7 @@ import java.util.Map;
 public class H_StringToIntegerAtoi {
 
     public static void main(String[] args) {
-        int index = myAtoi("words and 987");
+        int index = myAtoi2("2147483647");
         int i = 0;
     }
 
@@ -82,7 +82,7 @@ public class H_StringToIntegerAtoi {
         }
         int sign = 1, base = 0, i = 0, n = str.length();
         while (i < n && str.charAt(i) == ' ') {
-            ++i;
+            i++;
         }
         if (i < n && (str.charAt(i) == '+' || str.charAt(i) == '-')) {
             sign = (str.charAt(i++) == '+') ? 1 : -1;
