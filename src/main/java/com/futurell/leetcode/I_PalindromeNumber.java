@@ -38,7 +38,7 @@ public class I_PalindromeNumber {
      *  1. 字符串反转法
      *  2. 后半段反转法
      *  3. 数学公式计算两端对比法 isPalindrome3(int x)
-     *  4. 倒序计算法 isPalindrome2(int x)
+     *  4. 倒序计算法(数学的方式将x倒序) isPalindrome2(int x)
      */
     public static boolean isPalindrome(int x) {
         // 去掉负数
