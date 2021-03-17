@@ -74,34 +74,37 @@ public class J_RegularExpressionMatching {
         return s.charAt(i - 1) == p.charAt(j - 1);
     }
 
-    private static boolean isMatch1(char[] s, char[] p){
+    private static boolean isMatch1(char[] s, char[] p) {
         int m = s.length, n = p.length;
         // 这里dp矩阵是要大一圈的，用来处理s或者p为空串的情况，矩阵的行标i对应s的i-1，矩阵的列标j对应p的j-1
         boolean[][] dp = new boolean[m + 1][n + 1];
         // s和p都是空串的时候自然true
         dp[0][0] = true;
         // 初始化首列
-        for(int i = 1; i <= m; i++){
+        for (int i = 1; i <= m; i++) {
             dp[i][0] = false;
         }
         // 初始化首行
-        for(int j = 1; j <= n; j++){
-            if(j == 1 || p[j - 1] != '*') dp[0][j] = false;
-            else dp[0][j] = dp[0][j - 2];
+        for (int j = 1; j <= n; j++) {
+            if (j == 1 || p[j - 1] != '*') {
+                dp[0][j] = false;
+            } else {
+                dp[0][j] = dp[0][j - 2];
+            }
 
         }
         // 通过递推公式开始填充矩阵
-        for(int i = 1; i <= m; i++){
-            for(int j = 1; j <= n; j++){
-                if(p[j - 1] != '*'){
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (p[j - 1] != '*') {
                     dp[i][j] = (s[i - 1] == p[j - 1] || p[j - 1] == '.') && dp[i - 1][j - 1];
-                }
-                else{
-                    if(s[i - 1] == p[j - 2] || p[j - 2] == '.'){
+                } else {
+                    if (s[i - 1] == p[j - 2] || p[j - 2] == '.') {
                         dp[i][j] = dp[i][j - 1] || dp[i - 1][j];
-                        if(j > 1) dp[i][j] = dp[i][j] || dp[i][j - 2];
-                    }
-                    else{
+                        if (j > 1) {
+                            dp[i][j] = dp[i][j] || dp[i][j - 2];
+                        }
+                    } else {
                         dp[i][j] = dp[i][j - 2];
                     }
                 }
@@ -112,16 +115,16 @@ public class J_RegularExpressionMatching {
 
     public static boolean isMatch2(String s, String p) {
         int sLen = s.length(), pLen = p.length();
-        boolean[][] memory = new boolean[sLen+1][pLen+1];
+        boolean[][] memory = new boolean[sLen + 1][pLen + 1];
         memory[0][0] = true;
-        for(int i = 0; i <= sLen; i++) {
-            for(int j = 1; j <= pLen; j++) {
-                if(p.charAt(j-1) == '*') {
-                    memory[i][j] = memory[i][j-2] || (i > 0 && (s.charAt(i-1) == p.charAt(j-2) ||
-                            p.charAt(j-2) == '.') && memory[i-1][j]);
-                }else {
-                    memory[i][j] = i > 0 && (s.charAt(i-1) == p.charAt(j-1) || p.charAt(j-1) == '.')
-                            && memory[i-1][j-1];
+        for (int i = 0; i <= sLen; i++) {
+            for (int j = 1; j <= pLen; j++) {
+                if (p.charAt(j - 1) == '*') {
+                    memory[i][j] = memory[i][j - 2] || (i > 0 && (s.charAt(i - 1) == p.charAt(j - 2) ||
+                            p.charAt(j - 2) == '.') && memory[i - 1][j]);
+                } else {
+                    memory[i][j] = i > 0 && (s.charAt(i - 1) == p.charAt(j - 1) || p.charAt(j - 1) == '.')
+                            && memory[i - 1][j - 1];
                 }
             }
         }
