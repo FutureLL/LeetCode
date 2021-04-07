@@ -42,7 +42,7 @@ public class J_RegularExpressionMatching {
     }
 
     /**
-     * 思路: 表示 s 的前 i 个是否能被 p 的前 j 个匹配
+     * 思路: 表示 s 的第 i 个元素是否能被 p 的前 j 个匹配
      */
     public static boolean isMatch(String s, String p) {
         int m = s.length();
@@ -53,7 +53,7 @@ public class J_RegularExpressionMatching {
         for (int i = 0; i <= m; i++) {
             for (int j = 1; j <= n; j++) {
                 if (p.charAt(j - 1) == '*') {
-                    // 判断前一位是否为*号,如果是判断*号之前的状态,*之前满足匹配则状态为true
+                    // 判断当前的值与 j - 2 的值是否相等
                     f[i][j] = f[i][j - 2];
                     if (matches(s, p, i, j - 1)) {
                         f[i][j] = f[i][j] || f[i - 1][j];
