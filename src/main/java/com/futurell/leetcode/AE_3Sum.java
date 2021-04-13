@@ -34,7 +34,11 @@ public class AE_3Sum {
         int i = 0;
     }
 
-    // 双指针法 + 循环
+    /**
+     *  思路:
+     * 1. 双指针法 + 循环
+     *    这种方式就不会造成数据的遗漏
+     */
     public static List<List<Integer>> threeSum(int[] nums) {
         // 定义返回对象
         List<List<Integer>> list = new ArrayList<>();
@@ -81,7 +85,10 @@ public class AE_3Sum {
         return list;
     }
 
-    // 自己写的有问题
+    /**
+     *  问题:
+     * 1. 当 i++ 或 j-- 的时候会漏掉一部分数据
+     */
     public static List<List<Integer>> threeSumMy(int[] nums) {
         // 定义返回对象
         List<List<Integer>> list = new ArrayList<>();
@@ -89,22 +96,33 @@ public class AE_3Sum {
         List<Integer> temp = Arrays.stream(nums).boxed().sorted().collect(Collectors.toList());
 
         for (int i = 0, j = temp.size() - 1; i < j;) {
-            for (int z = i + 1; z < j; z ++) {
+            int z = i + 1;
+            if (z == j) {
+                break;
+            }
+            for (; z < j; z ++) {
                 // 单个有效值集合
                 List<Integer> tempList = new ArrayList<>();
-                if (temp.get(i) + temp.get(j) + temp.get(z) == 0) {
+                int sum = temp.get(i) + temp.get(j) + temp.get(z);
+                if (sum == 0) {
                     tempList.add(temp.get(i));
                     tempList.add(temp.get(j));
                     tempList.add(temp.get(z));
-                    if (!list.contains(tempList)) {
-                        list.add(tempList);
+                    list.add(tempList);
+                    // 去重
+                    while (i < j && temp.get(i).equals(temp.get(i + 1))) {
+                        i ++;
                     }
+                    while (i <  j && temp.get(j).equals(temp.get(j - 1))) {
+                        j --;
+                    }
+                    i ++;
+                    j --;
+                } else if (sum > 0) {
+                    j --;
+                } else if (sum < 0) {
+                    i ++;
                 }
-            }
-            if (Math.abs(temp.get(j) + temp.get(i + 1)) >= Math.abs(temp.get(i) + temp.get(j - 1))) {
-                j --;
-            } else {
-                i ++;
             }
         }
         return list;
