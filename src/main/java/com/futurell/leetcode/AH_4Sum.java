@@ -51,9 +51,11 @@ public class AH_4Sum {
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
+            // 当前四位当前组合最大值
             if (nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3] > target) {
                 break;
             }
+            // 当前四位当前组合最小值
             if (nums[i] + nums[nums.length - 3] + nums[nums.length - 2] + nums[nums.length - 1] < target) {
                 continue;
             }
@@ -62,9 +64,11 @@ public class AH_4Sum {
                 if (j > i + 1 && nums[j] == nums[j - 1]) {
                     continue;
                 }
+                // 当前三位数组合最大值
                 if (nums[i] + nums[j] + nums[j + 1] + nums[j + 2] > target) {
                     break;
                 }
+                // 当前三位数组合最小值
                 if (nums[i] + nums[j] + nums[nums.length - 2] + nums[nums.length - 1] < target) {
                     continue;
                 }
