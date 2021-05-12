@@ -29,8 +29,10 @@ import java.util.List;
 public class AH_4Sum {
 
     public static void main(String[] args) {
+        int i1 = ~4;
+        System.out.println(i1);
 
-        List<List<Integer>> lists = fourSum(new int[]{1, 0, -1, 0, -2, 2}, 0);
+        // List<List<Integer>> lists = fourSum(new int[]{1, 0, -1, 0, -2, 2}, 0);
         int i = 0;
     }
 
