@@ -1,6 +1,5 @@
 package com.futurell.leetcode.A_11_20;
 
-import com.futurell.leetcode.A_01_10.ListNode;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -25,6 +24,24 @@ import java.util.LinkedList;
  *  输入：head = [1,2], n = 1
  *  输出：[1]
  */
+/**
+ * 链表节点
+ */
+class ListNode {
+    int val;
+
+    ListNode next;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+
+    ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
+}
+
 public class AI_RemoveNthNodeFromEndOfList {
 
     public static void main(String[] args) {

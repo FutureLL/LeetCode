@@ -26,7 +26,7 @@ public class BB_GenerateParentheses {
 
     public static void main(String[] args) {
 
-        List<String> list = generateParenthesis(3);
+        List<String> list = generateParenthesis1(3);
         int i = 0;
     }
 
@@ -35,6 +35,7 @@ public class BB_GenerateParentheses {
      * 1. 暴力法 generateParenthesis
      * 2. 深度优先遍历 generateParenthesis1
      * 3. 广度优先遍历 generateParenthesis2
+     *  https://leetcode-cn.com/problems/generate-parentheses/solution/hui-su-suan-fa-by-liweiwei1419/
      */
     public static List<String> generateParenthesis(int n) {
         List<String> combinations = new ArrayList<String>();
@@ -70,6 +71,9 @@ public class BB_GenerateParentheses {
         return balance == 0;
     }
 
+    /**
+     * 深度优先遍历: 由于字符串的特殊性,产生一次拼接生产新的对象,因此无需回溯
+     */
     public static List<String> generateParenthesis1(int n) {
         List<String> res = new ArrayList<>();
         // 特判
@@ -110,16 +114,17 @@ public class BB_GenerateParentheses {
         }
     }
 
+    /**
+     * 广度优先遍历: 创建节点对象,使用队列完成广度优先遍历
+     */
     public static List<String> generateParenthesis2(int n) {
         List<String> res = new ArrayList<>();
-        if (n == 0) {
-            return res;
-        }
         Queue<Node> queue = new LinkedList<>();
+
         queue.offer(new Node("", n, n));
 
         while (!queue.isEmpty()) {
-
+            // Retrieves and removes the head of this queue,
             Node curNode = queue.poll();
             if (curNode.left == 0 && curNode.right == 0) {
                 res.add(curNode.res);
