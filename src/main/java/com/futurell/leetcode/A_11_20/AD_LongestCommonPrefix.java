@@ -1,4 +1,4 @@
-package com.futurell.leetcode;
+package com.futurell.leetcode.A_11_20;
 
 /**
  * @description: 14. 最长公共前缀

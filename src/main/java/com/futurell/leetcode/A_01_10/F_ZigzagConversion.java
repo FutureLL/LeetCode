@@ -1,4 +1,4 @@
-package com.futurell.leetcode;
+package com.futurell.leetcode.A_01_10;
 
 /**
  * @description: 6. Z 字形变换

@@ -1,4 +1,6 @@
-package com.futurell.leetcode;
+package com.futurell.leetcode.A_11_20;
+
+import com.futurell.leetcode.A_01_10.ListNode;
 
 import java.util.Deque;
 import java.util.LinkedList;

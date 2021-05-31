@@ -1,4 +1,4 @@
-package com.futurell.leetcode;
+package com.futurell.leetcode.A_01_10;
 
 /**
  * @Description: 4. 寻找两个正序数组的中位数

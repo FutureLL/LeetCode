@@ -1,4 +1,4 @@
-package com.futurell.leetcode;
+package com.futurell.leetcode.A_01_10;
 
 /**
  * @description: 7. 整数反转

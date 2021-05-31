@@ -1,4 +1,4 @@
-package com.futurell.leetcode;
+package com.futurell.leetcode.A_11_20;
 
 import java.util.ArrayList;
 import java.util.HashMap;
