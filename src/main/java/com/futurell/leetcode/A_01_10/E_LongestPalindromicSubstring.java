@@ -73,8 +73,6 @@ public class E_LongestPalindromicSubstring {
 
     /**
      *  思路: 动态规划
-     *
-     *  babab
      */
     public static String longestPalindromeTwo(String s) {
         // 特判
@@ -98,6 +96,7 @@ public class E_LongestPalindromicSubstring {
                     dp[i][j] = false;
                 } else {
                     // 边界条件是: 表达式 [i + 1, j - 1] 不构成区间, 即长度严格小于 2, 即 j - 1 - (i + 1) + 1 < 2, 整理得 j - i < 3。
+                    // 自己的理解: 单独判断一个字符串是否是回文字符串的最小单元是,起始到结束也就是 j - i = 0 (eg: a), j - i = 1 (eg: aa), j - i = 2 (eg: aba)
                     if (j - i < 3) {
                         dp[i][j] = true;
                     } else {
