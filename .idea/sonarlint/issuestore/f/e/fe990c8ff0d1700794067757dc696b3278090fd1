@@ -1,0 +1,15 @@
+
+b	java:S101#"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ŒÔã
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Éİƒ¹
+M
+java:S1128"2Remove this unused import 'java.util.Collections'.(¢³ïÓşÿÿÿÿ
+W
+java:S1854."<Remove this useless assignment to local variable "listNode".(¤Óğºøÿÿÿÿ
+O
+java:S1854,"9Remove this useless assignment to local variable "list2".(«ˆ˜Ù
+@
+java:S1481,"*Remove this unused "list2" local variable.(«ˆ˜Ù
+H
+java:S1481."-Remove this unused "listNode" local variable.(¤Óğºøÿÿÿÿ
+A
+java:S1481/"&Remove this unused "i" local variable.(ùó›Ìøÿÿÿÿ

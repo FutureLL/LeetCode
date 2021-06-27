@@ -1,0 +1,11 @@
+
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ÿ÷š
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Éÿ×ğ
+U
+java:S1854":Remove this useless assignment to local variable "prefix".(×‰À²øÿÿÿÿ
+=
+java:S1659E""Declare "high" on a separate line.(æ‚¶°üÿÿÿÿ
+F
+java:S1481"+Remove this unused "prefix" local variable.(×‰À²øÿÿÿÿ
+A
+java:S1481"&Remove this unused "i" local variable.(ùó›Ìøÿÿÿÿ

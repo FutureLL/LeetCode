@@ -1,0 +1,19 @@
+
+Q	java:S125#"<This block of commented-out lines of code should be removed.(…ƒµ•
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Éÿ×ğ
+f	java:S117O"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§Ğ¿§
+c
+java:S1128"HRemove this unused import 'com.sun.deploy.net.proxy.StaticProxyManager'.(Ù ¨úÿÿÿÿ
+n	java:S1353"YReduce the total number of break and continue statements in this loop to use at most one.(¦á±
+P
+java:S1191"5Use classes from the Java API instead of Sun classes.(Ù ¨úÿÿÿÿ
+5
+java:S1659O"Declare "R" on a separate line.(§Ğ¿§
+n	java:S135A"YReduce the total number of break and continue statements in this loop to use at most one.(ÈÑÇŞ
+M	java:S106!"9Replace this use of System.out or System.err by a logger.(÷Å‘Y
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Æäé‘şÿÿÿÿ
+A
+java:S1481$"&Remove this unused "i" local variable.(ùó›Ìøÿÿÿÿ
+m
+java:S3776+"RRefactor this method to reduce its Cognitive Complexity from 34 to the 15 allowed.(â¢Öàüÿÿÿÿ
+f	java:S117O"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§Ğ¿§

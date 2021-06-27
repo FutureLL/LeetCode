@@ -1,0 +1,22 @@
+
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¿›’ð
+m	java:S127x"XRefactor the code in order to not assign to this loop counter from within the loop body.(Â¨•ù
+m	java:S127z"XRefactor the code in order to not assign to this loop counter from within the loop body.(Â¨•ù
+@
+java:S1481!"*Remove this unused "lists" local variable.(¥©Ö¦
+f	java:S117="QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«ÑÏÍ
+h
+java:S3776*"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(ž÷¸¶
+m	java:S127r"XRefactor the code in order to not assign to this loop counter from within the loop body.(Ì‚ˆÌ
+m	java:S127u"XRefactor the code in order to not assign to this loop counter from within the loop body.(Â¨•ù
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Éÿ×ð
+O
+java:S1854!"9Remove this useless assignment to local variable "lists".(¥©Ö¦
+g
+java:S3776\"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(ŸÑœ
+A
+java:S1481""&Remove this unused "i" local variable.(ùó›Ìøÿÿÿÿ
+m	java:S127|"XRefactor the code in order to not assign to this loop counter from within the loop body.(Ì‚ˆÌ
+s	java:S1354"YReduce the total number of break and continue statements in this loop to use at most one.(ØÕ—©ýÿÿÿÿ
+k	java:S117>"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚“ˆâúÿÿÿÿ
+m	java:S127w"XRefactor the code in order to not assign to this loop counter from within the loop body.(Ì‚ˆÌ

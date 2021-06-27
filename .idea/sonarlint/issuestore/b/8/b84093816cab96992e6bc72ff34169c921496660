@@ -1,0 +1,13 @@
+
+E
+java:S1481""*Remove this unused "index" local variable.(ÀıÃãÿÿÿÿÿ
+A
+java:S1481#"&Remove this unused "i" local variable.(ùó›Ìøÿÿÿÿ
+T
+java:S1854""9Remove this useless assignment to local variable "index".(ÀıÃãÿÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Éÿ×ğ
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(‹èÆ
+:
+java:S1659<"Declare "i" on a separate line.(õ…é©şÿÿÿÿ
+:
+java:S1659<"Declare "j" on a separate line.(õ…é©şÿÿÿÿ

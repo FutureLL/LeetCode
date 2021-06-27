@@ -1,0 +1,15 @@
+
+D
+java:S1481")Remove this unused "list" local variable.(í²ø¸úÿÿÿÿ
+t
+java:S1171,"YMove the contents of this initializer to a standard constructor or to field initializers.(†Ü‡—þÿÿÿÿ
+z
+java:S1149E"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(†¯¢Öøÿÿÿÿ
+S
+java:S1854"8Remove this useless assignment to local variable "list".(í²ø¸úÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Éÿ×ð
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¯„³­ûÿÿÿÿ
+A
+java:S1481"&Remove this unused "i" local variable.(ùó›Ìøÿÿÿÿ
+G
+java:S3599,",Use another way to initialize this instance.(†Ü‡—þÿÿÿÿ

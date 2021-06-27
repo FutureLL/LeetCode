@@ -1,0 +1,11 @@
+
+B
+java:S1481""-Remove this unused "listNode" local variable.(™©
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(£Ü×ıÿÿÿÿ
+Q
+java:S1854""<Remove this useless assignment to local variable "listNode".(™©
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Éİƒ¹
+8
+java:S1659T""Declare "next" on a separate line.(Öƒû
+A
+java:S1481#"&Remove this unused "i" local variable.(ùó›Ìøÿÿÿÿ
