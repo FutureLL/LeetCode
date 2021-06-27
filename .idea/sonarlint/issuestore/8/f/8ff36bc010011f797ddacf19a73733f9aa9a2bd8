@@ -1,0 +1,14 @@
+
+]
+java:S1854";Remove this useless assignment to local variable "length1".(ÿñ¬üÿÿÿÿ8Òó–Ú¤/
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Éİƒ¹
+N
+java:S1481",Remove this unused "length1" local variable.(ÿñ¬üÿÿÿÿ8Òó–Ú¤/
+t	java:S1276"XRefactor the code in order to not assign to this loop counter from within the loop body.(Ì‚ˆÌ8Òó–Ú¤/
+X
+java:S1854";Remove this useless assignment to local variable "length2".(©µÄ•8Òó–Ú¤/
+H
+java:S1481"&Remove this unused "i" local variable.(ùó›Ìøÿÿÿÿ8Òó–Ú¤/
+I
+java:S1481",Remove this unused "length2" local variable.(©µÄ•8Òó–Ú¤/
+n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(û•ïÍüÿÿÿÿ8Òó–Ú¤/
