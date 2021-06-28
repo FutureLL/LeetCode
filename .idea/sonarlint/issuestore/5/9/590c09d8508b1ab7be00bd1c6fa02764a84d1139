@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 \
 java:S1854":Remove this useless assignment to local variable "length".(ÙÈšùÿÿÿÿ8žÅ˜Ú¤/
 M
@@ -7,3 +8,11 @@ o	java:S120"ZRename this package name to match the regular expression '^[a-z_
 h	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(‚í¶8žÅ˜Ú¤/
 H
 java:S1481"&Remove this unused "i" local variable.(ùó›Ìøÿÿÿÿ8žÅ˜Ú¤/
+=======
+m	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÉÝƒ¹
+F
+java:S1481"&Remove this unused "i" local variable.(ùó›Ìøÿÿÿÿ8žÅ˜Ú¤/
+K
+java:S1481"+Remove this unused "length" local variable.(ÙÈšùÿÿÿÿ8žÅ˜Ú¤/
+f	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(‚í¶8žÅ˜Ú¤/
+>>>>>>> origin/master
