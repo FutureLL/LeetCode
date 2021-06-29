@@ -30,7 +30,7 @@ public class BJ_SubstringWithConcatenationOfAllWords {
 
     public static void main(String[] args) {
 
-        List<Integer> barfoofoobarthefoobarman = findSubstring("barfoofoobarthefoobarman", new String[]{"bar", "foo", "the"});
+        List<Integer> list = findSubstring("barfoofoobarthefoobarman", new String[]{"bar", "foo", "the"});
         int i = 0;
     }
 
