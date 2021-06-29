@@ -27,3 +27,7 @@ q
 Asrc/main/java/com/futurell/leetcode/A_21_30/BG_RemoveElement.java,5/9/590c09d8508b1ab7be00bd1c6fa02764a84d1139
 i
 9src/main/java/com/futurell/leetcode/A_01_10/A_TwoSum.java,4/f/4f95989f4cc245ae6667b4e7dbb663801d74c87c
+u
+Esrc/main/java/com/futurell/leetcode/A_21_30/BI_DivideTwoIntegers.java,9/4/948d1340c4cb6bcfebe7c6b7f584c5bc68c5d6f3
+s
+Csrc/main/java/com/futurell/leetcode/A_21_30/BH_ImplementStrstr.java,6/a/6ab2aaa3e69cfb27b86b9af9fd748bf6da7a9c20

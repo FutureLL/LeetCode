@@ -1,7 +1,7 @@
 
-m	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Éİƒ¹
-F
-java:S1481"&Remove this unused "i" local variable.(ùó›Ìøÿÿÿÿ8Å˜Ú¤/
-K
-java:S1481"+Remove this unused "length" local variable.(ÙÈšùÿÿÿÿ8Å˜Ú¤/
-f	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(‚í¶8Å˜Ú¤/
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Éİƒ¹
+h	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(‚í¶8Å˜Ú¤/
+H
+java:S1481"&Remove this unused "i" local variable.(ùó›Ìøÿÿÿÿ8Å˜Ú¤/
+M
+java:S1481"+Remove this unused "length" local variable.(ÙÈšùÿÿÿÿ8Å˜Ú¤/
