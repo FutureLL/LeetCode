@@ -105,13 +105,14 @@ public class BH_ImplementStrstr {
         int[] next = next(needleChar, needleLen);
         int j = 0;
         for (int i = 0; i < haystackLen; ++i) {
-            // 发现不匹配的字符,然后根据 next 数组移动指针,移动到最大公共前后缀的，
+            // 发现不匹配的字符,然后根据 next 数组移动指针,移动到最大公共前后缀的
+            // * 直接移动模式串,将前缀移动到后缀 *
             // 前缀的后一位,和咱们移动模式串的含义相同
             while (j > 0 && haystackChar[i] != needleChar[j]) {
                 // 获取到最长公共前后缀中,后缀的开头下标
                 // +1 表示从下一个位置开始计算
                 j = next[j - 1] + 1;
-                //超出长度时,可以直接返回不存在
+                //超出匹配范围时,可以直接返回不存在
                 if (needleLen - j + i > haystackLen) {
                     return -1;
                 }
@@ -132,20 +133,16 @@ public class BH_ImplementStrstr {
      * next 数组存的我们最长公共前后缀中,前缀的结尾字符下标,或后缀的开头字符这样好理解一些。
      * 前缀: 不包含最后一个字符的所有以第一个字符开头的连续子串
      * 后缀: 不包含第一个字符的所有以最后一个字符结尾的连续子串
-     * 举例: 字符串 bcbcb
-     *      前缀有 b, bc, bcb, bcbc
-     *      后缀有 b, cb, bcb, cbcb
-     *      最长公共前后缀则为: bcb
      *
      * b   c   b   c   b   e   a
      * 前缀子串    前缀结尾下标    最长公共前后缀,前后缀结尾字符下标    next[]
-     * b          0            -1(无公共前后缀)                next[0] = -1
-     * bc         1            -1(无公共前后缀)                next[1] = -1
-     * bcb        2            0                             next[2] = 0
-     * bcbc       3            1                             next[3] = 1
-     * bcbcb      4            2                             next[4] = 2
-     * bcbcbe     5            -1(无公共前后缀)                next[5] = -1
-     * bcbcbea    6            -1(无公共前后缀)                next[6] = -1
+     * b          0            0        -1(无公共前后缀)       next[0] = -1
+     * bc         1            0        -1(无公共前后缀)       next[1] = -1
+     * bcb        2            1 b      0                    next[2] = 0
+     * bcbc       3            2 bc     1                    next[3] = 1
+     * bcbcb      4            3 bcb    2                    next[4] = 2
+     * bcbcbe     5            0        -1(无公共前后缀)       next[5] = -1
+     * bcbcbea    6            0        -1(无公共前后缀)       next[6] = -1
      */
     public static int[] next(char[] needleChar, int len) {
         //定义 next 数组
