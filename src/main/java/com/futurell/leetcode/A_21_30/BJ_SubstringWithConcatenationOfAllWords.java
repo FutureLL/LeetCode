@@ -72,9 +72,6 @@ public class BJ_SubstringWithConcatenationOfAllWords {
         return res;
     }
 
-    /**
-     * 移动一个位置下标
-     */
     public static List<Integer> findSubstring2(String s, String[] words) {
         List<Integer> res = new ArrayList<>();
         if (words.length == 0) {
