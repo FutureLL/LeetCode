@@ -29,30 +29,51 @@ import java.util.Arrays;
 public class CA_NextPermutation {
 
     public static void main(String[] args) {
-        nextPermutation(new int[] {1,3,2});
+        nextPermutation(new int[] {4,5,2,6,3,1});
         int i = 0;
     }
 
     /**
      *  思路:
-     * 1. 倒序查找
+     * 1. 两遍扫描
+     *  这道题的难点式如何找到这两个数,例如: [4,5,2,6,3,1]
+     *  可以找到左边较小的数为 2,右边较大的数为 3
      */
     public static void nextPermutation(int[] nums) {
 
-        // 记录
-        for (int i = nums.length - 2; i >= 0; i--) {
-            for (int j = nums.length - 1; j >= i; j++) {
-                // 找到下一个序列
-                if (nums[i] < nums[j + 1]) {
-                    nums[i] = nums[i] + nums[j + 1];
-                    nums[j + 1] = nums[i] - nums[j + 1];
-                    nums[i] = nums[i] - nums[j + 1];
-                    System.out.println(Arrays.toString(nums));
-                }
-            }
+        int i = nums.length - 2;
+        // // 找到左边较小的数
+        while (i >= 0 && nums[i] >= nums[i + 1]) {
+            i--;
         }
-        // 不满足条件正序排列
-        Arrays.sort(nums);
-        System.out.println(Arrays.toString(nums));
+        if (i >= 0) {
+            int j = nums.length - 1;
+            // 找到右边较大的数字
+            while (j >= 0 && nums[i] >= nums[j]) {
+                j--;
+            }
+            // 交换两个下标对应位置的值
+            swap(nums, i, j);
+        }
+        // 可以交换则说明 [i+1, n] 区间为降序,直接反转该区间使其变为升序
+        // 因为变换之后不能满足,下一个更大的排列,因此所以需要反转字符串
+        // 使用该代码也可以: Arrays.sort(nums, i + 1, nums.length);
+        reverse(nums, i + 1);
+        int si = 0;
+    }
+
+    public static void swap(int[] nums, int i, int j) {
+        nums[i] = nums[i] + nums[j];
+        nums[j] = nums[i] - nums[j];
+        nums[i] = nums[i] - nums[j];
+    }
+
+    public static void reverse(int[] nums, int start) {
+        int left = start, right = nums.length - 1;
+        while (left < right) {
+            swap(nums, left, right);
+            left++;
+            right--;
+        }
     }
 }
