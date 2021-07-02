@@ -38,3 +38,5 @@ Csrc/main/java/com/futurell/leetcode/A_21_30/BH_ImplementStrstr.java,6/a/6ab2aa
 >>>>>>> origin/master
 ˆ
 Xsrc/main/java/com/futurell/leetcode/A_21_30/BJ_SubstringWithConcatenationOfAllWords.java,0/1/011394b64c49316527ec10830c23cdd6043c15c8
+s
+Csrc/main/java/com/futurell/leetcode/A_31_40/CA_NextPermutation.java,0/9/09c022c27c01f6108ca71885466157a5064257df

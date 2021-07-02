@@ -42,7 +42,7 @@ public class CA_NextPermutation {
     public static void nextPermutation(int[] nums) {
 
         int i = nums.length - 2;
-        // // 找到左边较小的数
+        // 找到左边较小的数
         while (i >= 0 && nums[i] >= nums[i + 1]) {
             i--;
         }
@@ -59,7 +59,6 @@ public class CA_NextPermutation {
         // 因为变换之后不能满足,下一个更大的排列,因此所以需要反转字符串
         // 使用该代码也可以: Arrays.sort(nums, i + 1, nums.length);
         reverse(nums, i + 1);
-        int si = 0;
     }
 
     public static void swap(int[] nums, int i, int j) {

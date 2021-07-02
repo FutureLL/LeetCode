@@ -1,24 +1,10 @@
 
-<<<<<<< HEAD
-O
-java:S4973>"9Use the "equals" method if value comparison was intended.(Ü§Ôß
-A
-java:S1481""&Remove this unused "i" local variable.(ùó›Ìøÿÿÿÿ
-D
-java:S1481!")Remove this unused "list" local variable.(ßˆŠÏûÿÿÿÿ
-b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ëóá
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Éİƒ¹
-s	java:S135_"YReduce the total number of break and continue statements in this loop to use at most one.(ËÚüşÿÿÿÿ
-S
-java:S1854!"8Remove this useless assignment to local variable "list".(ßˆŠÏûÿÿÿÿ
-=======
-z	java:S135_"YReduce the total number of break and continue statements in this loop to use at most one.(ËÚüşÿÿÿÿ8‰ ˜¾¥/
-i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ëóá8ñòŠ½¥/
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Éİƒ¹
-K
-java:S1481!")Remove this unused "list" local variable.(ßˆŠÏûÿÿÿÿ8ñòŠ½¥/
-H
-java:S1481""&Remove this unused "i" local variable.(ùó›Ìøÿÿÿÿ8Úƒœ»¥/
-V
-java:S4973>"9Use the "equals" method if value comparison was intended.(Ü§Ôß8‰ ˜¾¥/
->>>>>>> origin/master
+m	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Éİƒ¹
+T
+java:S4973"9Use the "equals" method if value comparison was intended.(Ü§Ôß8‰ ˜¾¥/
+I
+java:S1481")Remove this unused "list" local variable.(ßˆŠÏûÿÿÿÿ8ñòŠ½¥/
+x	java:S135"YReduce the total number of break and continue statements in this loop to use at most one.(ËÚüşÿÿÿÿ8‰ ˜¾¥/
+F
+java:S1481"&Remove this unused "i" local variable.(ùó›Ìøÿÿÿÿ8Úƒœ»¥/
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ëóá8ñòŠ½¥/
