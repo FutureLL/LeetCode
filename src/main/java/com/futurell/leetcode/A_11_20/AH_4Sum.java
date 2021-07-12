@@ -23,8 +23,6 @@ import java.util.List;
  * 示例 2：
  *  输入：nums = [], target = 0
  *  输出：[]
- *
- *
  */
 public class AH_4Sum {
 
