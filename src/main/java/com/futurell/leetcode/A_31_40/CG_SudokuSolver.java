@@ -50,6 +50,10 @@ public class CG_SudokuSolver {
         int i = 0;
     }
 
+    /**
+     *  思路:
+     * 1. 回溯法 + 递归
+     */
     public static void solveSudoku(char[][] board) {
 
         if (board == null || board.length != 9 || board[0].length != 9) {
