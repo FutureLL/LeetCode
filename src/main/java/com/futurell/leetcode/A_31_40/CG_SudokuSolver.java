@@ -51,46 +51,52 @@ public class CG_SudokuSolver {
     }
 
     public static void solveSudoku(char[][] board) {
+
         if (board == null || board.length != 9 || board[0].length != 9) {
             return;
         }
 
-        boolean[][] row = new boolean[9][9];
-        boolean[][] col = new boolean[9][9];
-        boolean[][] box = new boolean[9][9];
+        int[][] row = new int[9][10];
+        int[][] col = new int[9][10];
+        // 记录 3 * 3 小方块对应的位置
+        int[][][] box = new int[3][3][10];
 
+        // 将可被插入数字的位置标记为ture
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 if (board[i][j] == '.') {
                     continue;
                 }
-                int num = board[i][j] - '1', k = (i / 3) * 3 + j / 3;
-                row[i][num] = col[j][num] = box[k][num] = true;
+                int num = board[i][j] - '1';
+                row[i][num] = col[j][num] = box[i / 3][j / 3][num] = 1;
             }
         }
+        // 从 0 开始将 n 所代表的位置存放相应的值
         solveSudokuHelper(board, 0, row, col, box);
     }
 
-    public static boolean solveSudokuHelper(char[][] board, int n, boolean[][] row, boolean[][] col, boolean[][] box) {
+    public static boolean solveSudokuHelper(char[][] board, int n, int[][] row, int[][] col, int[][][] box) {
         if (n == 81) {
             return true;
         }
-        int i = n / 9, j = n % 9;
+        int i = n / 9;
+        int j = n % 9;
+        // 不为 '.' 说明有数字,继续下一个位置即可
         if (board[i][j] != '.') {
             return solveSudokuHelper(board, n + 1, row, col, box);
         }
-
+        // 计算小方块所在的位置
         int k = (i / 3) * 3 + j / 3;
         for (int num = 0; num < 9; num++) {
-            if (row[i][num] || col[j][num] || box[k][num]) {
+            if (row[i][num] == 1 || col[j][num] == 1 || box[i / 3][j / 3][num] == 1) {
                 continue;
             }
             board[i][j] = (char) (num + '1');
-            row[i][num] = col[j][num] = box[k][num] = true;
+            row[i][num] = col[j][num] = box[i / 3][j / 3][num] = 1;
             if (solveSudokuHelper(board, n + 1, row, col, box)) {
                 return true;
             }
-            row[i][num] = col[j][num] = box[k][num] = false;
+            row[i][num] = col[j][num] = box[i / 3][j / 3][num] = 0;
         }
         board[i][j] = '.';
         return false;
