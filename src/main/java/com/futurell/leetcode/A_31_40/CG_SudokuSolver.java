@@ -85,19 +85,22 @@ public class CG_SudokuSolver {
         if (board[i][j] != '.') {
             return solveSudokuHelper(board, n + 1, row, col, box);
         }
-        // 计算小方块所在的位置
-        int k = (i / 3) * 3 + j / 3;
+
         for (int num = 0; num < 9; num++) {
+            // 行、列、小方块值 所对应的位置是否已经有值存在
             if (row[i][num] == 1 || col[j][num] == 1 || box[i / 3][j / 3][num] == 1) {
                 continue;
             }
             board[i][j] = (char) (num + '1');
+            // 将该位置置1表示已有数字
             row[i][num] = col[j][num] = box[i / 3][j / 3][num] = 1;
             if (solveSudokuHelper(board, n + 1, row, col, box)) {
                 return true;
             }
+            // 不满足进行回溯,回溯前先将不满足条件的数据恢复到之前
             row[i][num] = col[j][num] = box[i / 3][j / 3][num] = 0;
         }
+        // 循环结束之后才会执行下边的赋值操作,也就是循环之后也没有找到合适的值,因此将该位置置为原始值 '.'
         board[i][j] = '.';
         return false;
     }
