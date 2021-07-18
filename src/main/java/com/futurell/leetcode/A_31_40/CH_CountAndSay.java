@@ -46,10 +46,12 @@ public class CH_CountAndSay {
 
     /**
      *  思路：双指针
-     * 1.
+     * 1. 找规律,从 1 怎么到 11,从 11 怎么到 21,从 21 怎么到 1211
+     * 2. 只要找到规律代码其实不难写
      */
     public static String countAndSay(int n) {
 
+        // 设置默认值,从 1 开始计算
         StringBuffer cur = new StringBuffer("1");
         // 从 1 开始到 n - 1
         for (int i = 1; i < n; i++) {
@@ -58,7 +60,9 @@ public class CH_CountAndSay {
             int start = 0, end = 0;
             // 开始遍历前一项，开始描述
             while (end < pre.length()) {
+                // 统计重复元素的次数,出现不同元素时,停止计算
                 while (end < pre.length() && pre.charAt(start) == pre.charAt(end)) {
+                    // 记录出现的次数
                     end++;
                 }
                 // 元素出现次数与元素进行拼接
