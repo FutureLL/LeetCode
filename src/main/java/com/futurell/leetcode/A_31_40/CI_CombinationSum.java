@@ -30,15 +30,13 @@ import java.util.List;
 public class CI_CombinationSum {
 
     public static void main(String[] args) {
-        List<List<Integer>> lists = combinationSum(new int[]{
-                2, 3, 6, 7
-        }, 7);
+        List<List<Integer>> lists = combinationSum(new int[]{2, 3, 5}, 8);
         int i = 0;
     }
 
     /**
      *  思路: 搜索回溯
-     * 1.
+     * 1. "每次都要从结尾开始遍历"
      */
     public static List<List<Integer>> combinationSum(int[] candidates, int target) {
         // 存储所有结果
@@ -65,6 +63,8 @@ public class CI_CombinationSum {
         // 选择当前数
         if (target - candidates[idx] >= 0) {
             combine.add(candidates[idx]);
+            // 比如: [2,3,6,7] 已经将3添加到 combine 中,然后继续从值为 2 开始遍历,这样就可以组成 2,2
+            // 然后,又开始从 2 开始遍历,得到 2,2,3
             dfs(candidates, target - candidates[idx], ans, combine, idx);
             // 回溯,移除路径 combine 最后一个元素
             combine.remove(combine.size() - 1);
