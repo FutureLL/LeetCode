@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
 public class DA_FirstMissingPositive {
 
     public static void main(String[] args) {
-        int value = firstMissingPositive2(new int[]{5, 3, 2, 3, 2, 1});
+        int value = firstMissingPositive3(new int[]{5, 3, 2, 1, 2, 3});
         int i = 0;
     }
 
@@ -83,12 +83,15 @@ public class DA_FirstMissingPositive {
     public static int firstMissingPositive3(int[] nums) {
 
         for (int i = 0; i < nums.length; i++) {
+            // 将 nums[i] 获取到的值存放到下标为 nums[i] - 1 所对应的位置
             while (nums[i] > 0 && nums[i] <= nums.length && nums[nums[i] - 1] != nums[i]) {
+                // 交换数据
                 int temp = nums[nums[i] - 1];
                 nums[nums[i] - 1] = nums[i];
                 nums[i] = temp;
             }
         }
+        // 循环判断对应位置的数据是否为 i + 1
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != i + 1) {
                 return i + 1;
