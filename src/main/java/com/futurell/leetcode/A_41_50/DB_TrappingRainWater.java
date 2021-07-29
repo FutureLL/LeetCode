@@ -19,7 +19,7 @@ public class DB_TrappingRainWater {
 
     public static void main(String[] args) {
 
-        int trap = trap(new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1});
+        int trap = trap2(new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1});
         int i = 0;
     }
 
@@ -37,15 +37,17 @@ public class DB_TrappingRainWater {
         for (int i = 1; i < height.length - 1; i++) {
             int maxLeft = 0;
             int maxRight = 0;
-            // Search the left part for max bar size
+            // 向左遍历,找到最大值
             for (int j = i; j >= 0; j--) {
                 maxLeft = Math.max(maxLeft, height[j]);
             }
 
-            // Search the right part for max bar size
+            // 向右遍历,找到最大值
             for (int j = i; j < height.length; j++) {
                 maxRight = Math.max(maxRight, height[j]);
             }
+            // 当前列能放多少水,取决于左右两边的最大值中的小值,在减去该列本身占有的格子数量
+            // 例如: 1,0,2 当i=1时,左侧最大值为1,右侧最大值为2,两个数的小值为1,减i=1本身的值,则该位置可放雨水为1
             ans += Math.min(maxLeft, maxRight) - height[i];
         }
         return ans;
@@ -56,18 +58,24 @@ public class DB_TrappingRainWater {
         if (height == null || height.length == 0) {
             return 0;
         }
+        // 记录最大值
         int ans = 0;
         int size = height.length;
+        // 存储左右两侧的最大值
         int[] leftMax = new int[size];
         int[] rightMax = new int[size];
         leftMax[0] = height[0];
+        // 向左遍历,找到最大值
         for (int i = 1; i < size; i++) {
             leftMax[i] = Math.max(height[i], leftMax[i - 1]);
         }
         rightMax[size - 1] = height[size - 1];
+        // 向右遍历,找到最大值
         for (int i = size - 2; i >= 0; i--) {
             rightMax[i] = Math.max(height[i], rightMax[i + 1]);
         }
+        // 当前列能放多少水,取决于左右两边的最大值中的小值,在减去该列本身占有的格子数量
+        // 例如: 1,0,2 当i=1时,左侧最大值为1,右侧最大值为2,两个数的小值为1,减i=1本身的值,则该位置可放雨水为1
         for (int i = 1; i < size - 1; i++) {
             ans += Math.min(leftMax[i], rightMax[i]) - height[i];
         }
@@ -76,10 +84,15 @@ public class DB_TrappingRainWater {
 
     public static int trap3(int[] height) {
 
-        int left = 0;
-        int right = height.length - 1;
+        // 记录最大值
         int ans = 0;
+        // 从左往右处理的当前下标
+        int left = 0;
+        // 从右往左处理的当前下标
+        int right = height.length - 1;
+        // 左边的最大值，它是从左往右遍历找到的
         int leftMax = 0;
+        // 右边的最大值，它是从右往左遍历找到的
         int rightMax = 0;
         while (left < right) {
             if (height[left] < height[right]) {
