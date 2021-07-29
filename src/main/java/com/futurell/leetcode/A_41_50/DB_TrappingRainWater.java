@@ -90,22 +90,32 @@ public class DB_TrappingRainWater {
         int left = 0;
         // 从右往左处理的当前下标
         int right = height.length - 1;
-        // 左边的最大值，它是从左往右遍历找到的
+        // 左边的最大值,它是从左往右遍历找到的
         int leftMax = 0;
-        // 右边的最大值，它是从右往左遍历找到的
+        // 右边的最大值,它是从右往左遍历找到的
         int rightMax = 0;
+        // 双指针一左一右
         while (left < right) {
+            // 接水量取决于小短板
             if (height[left] < height[right]) {
+                // 短板>=左边最大值无法接水
                 if (height[left] >= leftMax) {
                     leftMax = height[left];
-                } else {
+                }
+                // 可以接水
+                else {
+                    // 计算当前下标可接水量
                     ans += (leftMax - height[left]);
                 }
                 left ++;
             } else {
+                // 短板>=左边最大值无法接水
                 if (height[right] >= rightMax) {
                     rightMax = height[right];
-                } else {
+                }
+                // 可以接水
+                else {
+                    // 计算当前下标可接水量
                     ans += (rightMax - height[right]);
                 }
                 right --;
