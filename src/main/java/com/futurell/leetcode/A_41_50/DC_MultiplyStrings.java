@@ -21,6 +21,11 @@ public class DC_MultiplyStrings {
         int i = 0;
     }
 
+    /**
+     *  思路: 做乘法
+     * 1. 字符串相乘相当于,数字依次相乘
+     * 2. 逐个累加的过程
+     */
     public static String multiply(String num1, String num2) {
         // 特殊情况判断,0乘以任何数都为0
         if (num1.equals("0") || num2.equals("0")) {
@@ -29,17 +34,19 @@ public class DC_MultiplyStrings {
 
         // 存储结果
         int[] ansArr = new int[num1.length() + num2.length()];
+        // 数字依次相乘
         for (int i = num1.length() - 1; i >= 0; i--) {
             for (int j = num2.length() - 1; j >= 0; j--) {
-                ansArr[i + j + 1] += num1.charAt(i) - '0' * num2.charAt(j) - '0';
+                ansArr[i + j + 1] += (num1.charAt(i) - '0') * (num2.charAt(j) - '0');
             }
         }
+        // 逐个累加
         for (int i = num1.length() + num2.length() - 1; i > 0; i--) {
             ansArr[i - 1] += ansArr[i] / 10;
             ansArr[i] %= 10;
         }
 
-        // 判断是否需要进位
+        // 判断是否有进位
         int index = ansArr[0] == 0 ? 1 : 0;
 
         // 组装返回对象
