@@ -22,7 +22,7 @@ package com.futurell.leetcode.A_41_50;
 public class DE_JumpGameII {
 
     public static void main(String[] args) {
-        int jump = jump3(new int[]{2, 3, 1, 1, 4});
+        int jump = jump3(new int[]{2, 3, 0, 1, 4});
         int i = 0;
     }
 
