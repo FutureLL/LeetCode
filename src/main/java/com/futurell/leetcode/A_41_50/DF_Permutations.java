@@ -34,6 +34,7 @@ public class DF_Permutations {
     /**
      *  思路:
      * 1. 回溯 --- permute
+     * 举例:
      *    1, 2, 3, 4
      *    1, 2, 4, 3
      *    1, 3, 2, 4
