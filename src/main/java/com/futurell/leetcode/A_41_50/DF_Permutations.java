@@ -55,6 +55,15 @@ public class DF_Permutations {
         return res;
     }
 
+    /**
+     *  这里使用 first 的原因:
+     * 很容易想到的一个处理手段是我们定义一个标记数组 vis[] 来标记已经填过的数,那么在填第 first 个数的时候我们遍历题目给定的 n 个数,
+     *     如果这个数没有被标记过,我们就尝试填入,并将其标记,继续尝试填下一个位置
+     * 使用标记数组来处理填过的数是一个很直观的思路,但是可不可以去掉这个标记数组呢？毕竟标记数组也增加了我们算法的空间复杂度
+     * 答案是可以的,我们可以将题目给定的 n 个数的数组 nums 划分成左右两个部分,左边的表示已经填过的数,右边表示待填的数,
+     *     我们在回溯的时候只要动态维护这个数组即可
+     * 具体来说,假设我们已经填到第 first 个位置,那么 nums 数组中 [0,first−1] 是已填过的数的集合,[first,n−1] 是待填的数的集合
+     */
     public static void backtrack(int n, List<Integer> output, List<List<Integer>> res, int first) {
         // 所有数都填完了
         if (first == n) {
