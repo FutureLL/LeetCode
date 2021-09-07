@@ -36,55 +36,30 @@ public class DH_RotateImage {
 
     /**
      *  思路:
-     * 1.
-     * 2. 原地旋转 --- rotate2
+     * 1. 原地旋转 --- rotate
+     *    1  2  3
+     *    4  5  6
+     *    7  8  9
      */
     public static void rotate(int[][] matrix) {
-
-        // 记录位置是否被覆盖
-        boolean[][] arr = new boolean[matrix.length][matrix.length];
-
-        for (int z = 0; z < matrix.length; z++) {
-            // 标记坐标
-            int i = 0, j = z;
-            int tempValueNew = matrix[i][j];
-            for (int whileCount = 0; whileCount < 4; whileCount++) {
-
-                // 记录旧值
-                int tempValueOld = tempValueNew;
-
-                // 计算要填入的坐标
-                switch (whileCount) {
-                    case 0:
-                    case 2:
-                        //i = matrix.length - 1 - i;
-                        j = matrix.length - 1 - j;
-                        break;
-                    case 1:
-                    case 3:
-                        i = matrix.length - 1 - i;
-                        //j = matrix.length - 1 - j;
-                        break;
-                    default:
-                        break;
-                }
-
-                if (!arr[i][j]) {
-                    // 记录被覆盖的值
-                    tempValueNew = matrix[i][j];
-                    arr[i][j] = true;
-
-                    // 填充值
-                    matrix[i][j] = tempValueOld;
-                }
-            }
-        }
-    }
-
-    public static void rotate2(int[][] matrix) {
+        // 计算长度
         int n = matrix.length;
+        // 以3*3为例: 只需要旋转 1,2 即可
+        // 以4*4为例: 只需要旋转 1,2,5,6 即可
+        // 横轴
+        // 5*5 矩阵 /2 = 2 --> i IN (0,1)
+        // 4*4 矩阵 /2 = 2 --> i IN (0,1)
         for (int i = 0; i < n / 2; ++i) {
+            // 纵轴
+            // 5*5 矩阵 /2 = 3 --> i IN (0,1,2)
+            // 4*4 矩阵 /2 = 2 --> i IN (0,1)
             for (int j = 0; j < (n + 1) / 2; ++j) {
+                // 以3*3为例:第一次进入
+                // 每次顺时针获取对应位置的值
+                // temp = 1
+                // matrix[n - j - 1][i] = 7
+                // matrix[n - i - 1][n - j - 1] = 9
+                // matrix[j][n - i - 1] = 3
                 int temp = matrix[i][j];
                 matrix[i][j] = matrix[n - j - 1][i];
                 matrix[n - j - 1][i] = matrix[n - i - 1][n - j - 1];
