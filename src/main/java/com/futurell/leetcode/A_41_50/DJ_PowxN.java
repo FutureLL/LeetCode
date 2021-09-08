@@ -1,5 +1,7 @@
 package com.futurell.leetcode.A_41_50;
 
+import java.math.BigDecimal;
+
 /**
  * @Description: 50. Pow(x, n)
  * @Author: lilei58
@@ -17,7 +19,7 @@ package com.futurell.leetcode.A_41_50;
  * 示例 3：
  *  输入：x = 2.00000, n = -2
  *  输出：0.25000
- *  解释：2-2 = 1/22 = 1/4 = 0.25
+ *  解释：2^-2 = 1/2^2 = 1/4 = 0.25
  */
 public class DJ_PowxN {
 
@@ -28,7 +30,21 @@ public class DJ_PowxN {
 
     public static double myPow(double x, int n) {
 
-        return 0.0;
+        boolean tag = true;
+        if (n < 0) {
+            tag = false;
+        }
+
+        double d = 1.00000D;
+
+        for (int i = 1; i <= Math.abs(n); i++) {
+            d *= x;
+        }
+
+        BigDecimal b = new BigDecimal(d);
+        d = b.setScale(5, BigDecimal.ROUND_HALF_UP).doubleValue();
+
+        return tag ? d : 1 / d;
 
     }
 }
