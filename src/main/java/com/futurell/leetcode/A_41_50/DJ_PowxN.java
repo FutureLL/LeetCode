@@ -1,7 +1,5 @@
 package com.futurell.leetcode.A_41_50;
 
-import java.math.BigDecimal;
-
 /**
  * @Description: 50. Pow(x, n)
  * @Author: lilei58
