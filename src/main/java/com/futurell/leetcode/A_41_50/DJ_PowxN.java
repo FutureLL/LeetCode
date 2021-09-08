@@ -28,23 +28,32 @@ public class DJ_PowxN {
         int i = 0;
     }
 
+    /**
+     *  思路:
+     * 1. 依次乘(超时) --- myPow
+     * 2. 快速幂+递归 --- myPow2
+     */
     public static double myPow(double x, int n) {
 
-        boolean tag = true;
-        if (n < 0) {
-            tag = false;
-        }
-
-        double d = 1.00000D;
+        double d = 1.0;
 
         for (int i = 1; i <= Math.abs(n); i++) {
             d *= x;
         }
 
-        BigDecimal b = new BigDecimal(d);
-        d = b.setScale(5, BigDecimal.ROUND_HALF_UP).doubleValue();
+        return n > 0 ? d : 1 / d;
+    }
 
-        return tag ? d : 1 / d;
+    public static double myPow2(double x, int n) {
+        long N = n;
+        return N >= 0 ? quickMul(x, N) : 1.0 / quickMul(x, -N);
+    }
 
+    public static double quickMul(double x, long N) {
+        if (N == 0) {
+            return 1.0;
+        }
+        double y = quickMul(x, N / 2);
+        return N % 2 == 0 ? y * y : y * y * x;
     }
 }
