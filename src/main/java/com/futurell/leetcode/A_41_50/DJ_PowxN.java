@@ -22,7 +22,7 @@ package com.futurell.leetcode.A_41_50;
 public class DJ_PowxN {
 
     public static void main(String[] args) {
-        double v = myPow2(2.10000, 3);
+        double v = myPow2(2.10000, 10);
         int i = 0;
     }
 
