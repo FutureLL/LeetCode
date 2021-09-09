@@ -22,7 +22,7 @@ package com.futurell.leetcode.A_41_50;
 public class DJ_PowxN {
 
     public static void main(String[] args) {
-        double v = myPow2(2.10000, 10);
+        double v = myPow2(2.10000, 5);
         int i = 0;
     }
 
@@ -30,6 +30,8 @@ public class DJ_PowxN {
      *  思路:
      * 1. 依次乘(超时) --- myPow
      * 2. 快速幂+递归 --- myPow2
+     *    2^5 --> ((2*2^1)^2)^2
+     *    2^4 --> ((2^1)^2)^2
      */
     public static double myPow(double x, int n) {
 
