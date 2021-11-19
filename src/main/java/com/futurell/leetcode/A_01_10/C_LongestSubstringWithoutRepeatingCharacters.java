@@ -34,7 +34,7 @@ public class C_LongestSubstringWithoutRepeatingCharacters {
 
     public static void main(String[] args) {
         // 优秀的思路
-        int length = lengthOfLongestSubstring("abba");
+        int length = lengthOfLongestSubstring("abcabcbb");
         // 自己的思路1
         int lengthMy1 = lengthOfLongestSubstringMyself1("abba");
         // 自己的思路2
@@ -59,9 +59,12 @@ public class C_LongestSubstringWithoutRepeatingCharacters {
         for (int start = 0, end = 0; end < s.length(); end++) {
             char ch = s.charAt(end);
             if (map.containsKey(ch)) {
+                // 重新计算起始位置
                 start = Math.max(map.get(ch), start);
             }
+            // 计算当前最长子串
             ans = Math.max(ans, end - start + 1);
+            // 存入 Map 中,有数据则更新 value,无数据则插入
             map.put(s.charAt(end), end + 1);
         }
         return ans;
