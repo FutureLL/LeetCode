@@ -22,12 +22,9 @@ import java.util.List;
  */
 public class EA_NQueens {
 
-    /** 存放数据 */
-    private static List<List<String>> queenList = new ArrayList<>();
-
     public static void main(String[] args) {
 
-        List<List<String>> lists = solveNQueens(4);
+        List<List<String>> solutions = solveNQueens(1);
         int i = 0;
     }
 
@@ -41,45 +38,46 @@ public class EA_NQueens {
         int[] right = new int [2 * n - 1];
         // 存储每行皇后的位置,下标表示行坐标,所存的元素表示列坐标
         int[] Q = new int [n];
-        // 存放数据
-        List<List<String>> queenList = new ArrayList<>();
+
+        /** 存放数据 */
+        List<List<String>> solutions = new ArrayList<>();
 
         // 处理
-        nextQueen(0, n, col, left, right, Q);
+        nextQueen(0, n, col, left, right, Q, solutions);
 
-        return queenList;
+        return solutions;
     }
 
-    public static void nextQueen(int i, int n, int[] col, int[] left, int[] right, int[] Q) {
+    public static void nextQueen(int i, int n, int[] col, int[] left, int[] right, int[] Q, List<List<String>> solutions) {
         // 列的坐标
         for (int j = 0; j < n; j++) {
             // 判断是否可以放置皇后
-            if (col[j] == 0 && left[i + j] == 0 && right[n + i - j] == 0) {
+            if (col[j] == 0 && left[i + j] == 0 && right[n + i - j - 1] == 0) {
                 // 将当前行可放的皇后位置赋给Q[i]数组,i为当前行
                 Q[i] = j;
                 // 这一列,左斜线以及右斜线不能放置皇后
-                col[j] = left[i + j] = right[n + i - j] = 1;
+                col[j] = left[i + j] = right[n + i - j - 1] = 1;
                 // 表示行号以及皇后数
-                if (i < n) {
+                if (i < n - 1) {
                     // 进入下一行递归
-                    nextQueen(i + 1, n, col, left, right, Q);
+                    nextQueen(i + 1, n, col, left, right, Q, solutions);
                 }
                 // 表示 i==N 时,N个皇后放置完成
                 else {
                     // 输出
-                    printQueen(i, Q);
+                    printQueen(n, Q, solutions);
                 }
                 //清0,进入输出后需要清0，这一行没找到回溯需要清0；
-                col[j] = left[i + j] = right[n + i - j] = 0;
+                col[j] = left[i + j] = right[n + i - j - 1] = 0;
             }
         }
     }
 
-    private static void printQueen(int n, int[] Q) {
-        StringBuffer sb = new StringBuffer();
+    private static void printQueen(int n, int[] Q, List<List<String>> solutions) {
         List<String> oneQueen = new ArrayList<>();
         // 输出
         for (int i = 0; i < n; i++) {
+            StringBuffer sb = new StringBuffer();
             for (int j = 0; j < n; j++) {
                 if (j == Q[i]) {
                     sb.append("Q");
@@ -91,6 +89,6 @@ public class EA_NQueens {
             oneQueen.add(sb.toString());
         }
         // 记录一组皇后
-        queenList.add(oneQueen);
+        solutions.add(oneQueen);
     }
 }
