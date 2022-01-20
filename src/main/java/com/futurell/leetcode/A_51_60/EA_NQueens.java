@@ -19,6 +19,7 @@ import java.util.List;
  * 示例 2：
  *  输入：n = 1
  *  输出：[["Q"]]
+ *
  */
 public class EA_NQueens {
 
